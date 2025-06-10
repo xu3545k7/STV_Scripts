@@ -75,6 +75,10 @@ class TestPLStatement(unittest.TestCase):
         search_input.send_keys("1000")
         time.sleep(0.5)
 
+        # 點擊 確認按鈕
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/img_save")')
+        time.sleep(0.5)
+        
         # 驗證目標圖示變換
         target_element = wait_until_present(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/ivNotFind")')
 

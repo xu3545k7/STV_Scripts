@@ -68,6 +68,10 @@ class TestPLStatement(unittest.TestCase):
         wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/iv_bg").instance(2)')
         time.sleep(0.5)
 
+        # 點擊 確認按鈕
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/img_save")')
+        time.sleep(0.5)
+
         # 點擊 收入分類
         wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/layout_income_category")')
         time.sleep(0.5)
@@ -77,6 +81,12 @@ class TestPLStatement(unittest.TestCase):
         wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/iv_bg").instance(0)')
         time.sleep(0.5)
 
+        # 點擊 確認按鈕
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/img_save")')
+        time.sleep(0.5)
+
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/img_save")')
+        time.sleep(0.5)
         # 驗證目標圖示變換
         target_element = wait_until_present(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/ivNotFind")')
 
