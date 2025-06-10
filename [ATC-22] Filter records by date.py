@@ -54,15 +54,11 @@ class TestPLStatement(unittest.TestCase):
         time.sleep(0.5)
 
         # 點擊 篩選工具
-        wait_and_click(self.driver, 20, 'com.money.smoney_android:id/iv_coolicon')
-        time.sleep(0.5)
-
-        # 點擊 篩選工具
-        wait_and_click(self.driver, 20, 'com.money.smoney_android:id/iv_coolicon')
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/iv_coolicon")')
         time.sleep(0.5)
 
         # 點擊 開始日期 
-        wait_and_click(self.driver, 20, 'com.money.smoney_android:id/layout_start_date')
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/layout_start_date")')
         time.sleep(0.5)
 
         # 選擇 支出分類 
@@ -73,7 +69,7 @@ class TestPLStatement(unittest.TestCase):
         time.sleep(0.5)
         
         # 點擊 結束日期
-        wait_and_click(self.driver, 20, 'com.money.smoney_android:id/layout_end_date')
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/layout_end_date")')
         time.sleep(0.5)
 
         # 點擊「15」的日期
@@ -81,10 +77,10 @@ class TestPLStatement(unittest.TestCase):
         time.sleep(0.5)
 
         # 驗證目標圖示變換
-        target_element = wait_until_present(self.driver, 20, 'com.money.smoney_android:id/ivNotFind')
-        
+        target_element = wait_until_present(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/ivNotFind")')
+
         # 驗證目標圖示不是未搜尋的圖示
-        self.assertNotEqual(target_element, 'com.money.smoney_android:id/ivNoSearch')
+        self.assertNotEqual(target_element, 'new UiSelector().resourceId("com.money.smoney_android:id/ivNoSearch")')
         time.sleep(0.5)
 
 if __name__ == '__main__':

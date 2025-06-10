@@ -54,27 +54,22 @@ class TestPLStatement(unittest.TestCase):
         time.sleep(0.5)
 
         # 點擊 篩選工具
-        wait_and_click(self.driver, 20, 'com.money.smoney_android:id/iv_coolicon')
-        time.sleep(0.5)
-
-        # 點擊 篩選工具
-        wait_and_click(self.driver, 20, 'com.money.smoney_android:id/iv_coolicon')
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/iv_coolicon")')
         time.sleep(0.5)
 
         # 點擊 支出分類 
-        wait_and_click(self.driver, 20, 'com.money.smoney_android:id/tv_expense_category_choose')
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/layout_expense_category")')
         time.sleep(0.5)
 
-        # 選擇 支出分類 
         # 點擊「午餐」
-        wait_and_click(self.driver, 20, 'new UiSelector().text("午餐")')
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/iv_icon").instance(0)')
         time.sleep(0.5)
         # 點擊「晚餐」
         wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/iv_bg").instance(2)')
         time.sleep(0.5)
 
         # 點擊 收入分類
-        wait_and_click(self.driver, 20, 'com.money.smoney_android:id/tv_income_category_choose')
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/layout_income_category")')
         time.sleep(0.5)
         
         # 選擇 收入分類
@@ -83,10 +78,10 @@ class TestPLStatement(unittest.TestCase):
         time.sleep(0.5)
 
         # 驗證目標圖示變換
-        target_element = wait_until_present(self.driver, 20, 'com.money.smoney_android:id/ivNotFind')
-        
+        target_element = wait_until_present(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/ivNotFind")')
+
         # 驗證目標圖示不是未搜尋的圖示
-        self.assertNotEqual(target_element, 'com.money.smoney_android:id/ivNoSearch')
+        self.assertNotEqual(target_element, 'new UiSelector().resourceId("com.money.smoney_android:id/ivNoSearch")')
         time.sleep(0.5)
 
 if __name__ == '__main__':
