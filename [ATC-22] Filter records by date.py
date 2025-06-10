@@ -67,7 +67,11 @@ class TestPLStatement(unittest.TestCase):
         # 點擊「9」的日期
         wait_and_click(self.driver, 20, 'new UiSelector().text("9")')
         time.sleep(0.5)
-        
+
+        # 點擊 確認按鈕
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/positiveButton")')
+        time.sleep(0.5)
+
         # 點擊 結束日期
         wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/layout_end_date")')
         time.sleep(0.5)
@@ -75,7 +79,14 @@ class TestPLStatement(unittest.TestCase):
         # 點擊「15」的日期
         wait_and_click(self.driver, 20, 'new UiSelector().text("15")')
         time.sleep(0.5)
+        # 點擊 確認按鈕
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/positiveButton")')
+        time.sleep(0.5)
 
+        # 點擊 確認按鈕
+        wait_and_click(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/img_save")')
+        time.sleep(0.5)
+        
         # 驗證目標圖示變換
         target_element = wait_until_present(self.driver, 20, 'new UiSelector().resourceId("com.money.smoney_android:id/ivNotFind")')
 
